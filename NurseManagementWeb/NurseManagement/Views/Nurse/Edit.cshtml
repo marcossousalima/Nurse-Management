@@ -1,0 +1,58 @@
+﻿@model NurseManagement.Models.Nurse
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row">
+    <h2 class="text-center col-md-10 col-md-offset-1 well alert-info">Dados do Enfermeiro @Model.Name</h2>
+</div>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1 well">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-md-6">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="col-md-3">
+                <label asp-for="Coren" class="control-label"></label>
+                <input asp-for="Coren" class="form-control coren" />
+                <span asp-validation-for="Coren" class="text-danger"></span>
+            </div>
+            <div class="col-md-3">
+                <label asp-for="CPF" class="control-label"></label>
+                <input asp-for="CPF" class="form-control cpf" />
+                <span asp-validation-for="CPF" class="text-danger"></span><br />
+            </div><br />
+            <div class="col-md-6">
+                <label>Hospital</label>
+                <select asp-for="Id_Hospital" name="Id_Hospital" class="form-control">
+                    @foreach (var item in ViewBag.Hospital)
+                    {
+                        <option value="@item.Id">@item.Name - @item.City</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span><br /><br />
+            </div>
+            <div class="col-md-10">
+                <div class="col-md-3">
+                    <input type="submit" value="Salvar" class="btn btn-success" />
+                </div>
+                <div class="">
+                    <a class=" btn btn-info col-md-2" asp-action="Index">Voltar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

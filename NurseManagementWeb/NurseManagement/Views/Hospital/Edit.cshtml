@@ -1,0 +1,64 @@
+﻿@model NurseManagement.Models.Hospital
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row">
+    <h2 class="text-center col-md-10 col-md-offset-1 well alert-info">Editar dados do  Hospital @Model.Name</h2>
+</div>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1 well">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-md-9">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="col-md-3">
+                <label asp-for="CNPJ" class="control-label"></label>
+                <input asp-for="CNPJ" class="form-control cnpj" />
+                <span asp-validation-for="CNPJ" class="text-danger"></span><br />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="State" class="control-label"></label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Neighborhood" class="control-label"></label>
+                <input asp-for="Neighborhood" class="form-control" />
+                <span asp-validation-for="Neighborhood" class="text-danger"></span><br />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Number" class="control-label"></label>
+                <input asp-for="Number" class="form-control" />
+                <span asp-validation-for="Number" class="text-danger"></span>
+            </div>
+            <div class="col-md-8">
+                <label asp-for="Complement" class="control-label"></label>
+                <input asp-for="Complement" class="form-control" />
+                <span asp-validation-for="Complement" class="text-danger"></span><br /><br />
+            </div>
+            <div class="col-md-10">
+                <div class="col-md-3">
+                    <input type="submit" value="Cadastrar" class="btn btn-success" />
+                </div>
+                <div class="">
+                    <a class=" btn btn-info col-md-2" asp-action="Index">Voltar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

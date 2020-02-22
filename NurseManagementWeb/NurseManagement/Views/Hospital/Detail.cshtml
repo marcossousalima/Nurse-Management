@@ -1,0 +1,44 @@
+﻿@model NurseManagement.Models.Hospital
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="row">
+    <h2 class="text-center row col-md-10 col-md-offset-1 well alert-info">Detalhes do Hospital @Model.Name</h2>
+    <div class="col-md-10 col-md-offset-1 well">
+        <div class="col-md-6">
+            <strong>Nome</strong><br />
+            @Html.DisplayFor(model => model.Name)
+        </div>
+        <div class="col-md-3">
+            <strong>CNPJ</strong><br />
+            @Html.DisplayFor(model => model.CNPJ)
+        </div>
+        <div class="col-md-3">
+            <strong>Número</strong><br />
+            @Html.DisplayFor(model => model.Number)<br /><br />
+        </div>
+        <div class="col-md-3">
+            <strong>Cidade</strong><br />
+            @Html.DisplayFor(model => model.City)
+        </div>
+        <div class="col-md-3">
+            <strong>Estado</strong><br />
+            @Html.DisplayFor(model => model.State)
+        </div>
+        <div class="col-md-3">
+            <strong>Bairro</strong><br />
+            @Html.DisplayFor(model => model.Neighborhood)<br /><br />
+        </div>
+        <div class="col-md-12">
+            <strong>Complemento</strong><br />
+            @Html.DisplayFor(model => model.Complement)<br />
+        </div>
+    </div>
+</div>
+<div class="col-md-10 col-md-offset-1">
+    <div class="">
+        <a class=" btn btn-info col-md-2" asp-action="Index">Voltar</a>
+    </div>
+</div>

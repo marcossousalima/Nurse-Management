@@ -1,0 +1,9 @@
+C:\Users\Marcos S L\Desktop\NurseManagement\Shared\obj\Debug\netcoreapp2.1\Shared.csproj.CoreCompileInputs.cache
+C:\Users\Marcos S L\Desktop\NurseManagement\Shared\obj\Debug\netcoreapp2.1\Shared.AssemblyInfoInputs.cache
+C:\Users\Marcos S L\Desktop\NurseManagement\Shared\obj\Debug\netcoreapp2.1\Shared.AssemblyInfo.cs
+C:\Users\Marcos S L\Desktop\NurseManagement\Shared\bin\Debug\netcoreapp2.1\Shared.deps.json
+C:\Users\Marcos S L\Desktop\NurseManagement\Shared\bin\Debug\netcoreapp2.1\Shared.dll
+C:\Users\Marcos S L\Desktop\NurseManagement\Shared\bin\Debug\netcoreapp2.1\Shared.pdb
+C:\Users\Marcos S L\Desktop\NurseManagement\Shared\obj\Debug\netcoreapp2.1\Shared.csprojAssemblyReference.cache
+C:\Users\Marcos S L\Desktop\NurseManagement\Shared\obj\Debug\netcoreapp2.1\Shared.dll
+C:\Users\Marcos S L\Desktop\NurseManagement\Shared\obj\Debug\netcoreapp2.1\Shared.pdb

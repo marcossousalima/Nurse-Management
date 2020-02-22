@@ -1,0 +1,92 @@
+﻿@model IEnumerable<NurseManagement.Models.Nurse>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="text-center well alert-info">Lista de Enfermeiros Cadastrados</h2>
+
+
+<p>
+    <a asp-action="Create" class="btn btn-primary glyphicon glyphicon-plus"></a>
+</p>
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <table class="table  table-bordered table-condensed" id="serverTable">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Coren)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BirthDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NameHospital)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Coren)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BirthDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NameHospital)
+                        </td>
+                        <td class="text-right">
+                            <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-success glyphicon glyphicon-pencil"></a>
+                            <a href="@Url.Action("Detail", new { id = item.Id })" class="btn btn-info glyphicon glyphicon-file"></a>
+                            <a  class="btn btn-danger glyphicon glyphicon-remove" onclick="Remove('@item.Id', 'Nurse', 'Esse Enfermeiro ?')"></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    @*<link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="~/modal/DeleteModal.js"></script>
+        <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">*@
+    <script>
+        // jquery datatable
+        $("#serverTable").dataTable({
+            "bJQueryUI": true,
+            "oLanguage": {
+                "sProcessing": "Processando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "Não foram encontrados resultados",
+                "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando de 0 até 0 de 0 registros",
+                "sInfoFiltered": "",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "Anterior",
+                    "sNext": "Seguinte",
+                    "sLast": "Último"
+                }
+            }
+        })
+    </script>
+}
