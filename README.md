@@ -1,4 +1,4 @@
-# Nurse-Management
+# Nurse Management
 Sistema de gerenciamento de Enfermeiro, onde temos um CRUD.
 Que possui o cadastro de hospital e cadastro de enfermeiro com o respectivo hospital onde o mesmo realiza suas atividades.
 
